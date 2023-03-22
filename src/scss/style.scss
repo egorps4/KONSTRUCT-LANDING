@@ -42,6 +42,7 @@ $beigeColor: #E6E6E6;
 //ПОДКЛЮЧЕНИЕ СТРАНИЦ
 @import 'header';
 @import 'footer';
+@import 'forms';
 //ПОДКЛЮЧЕНИЕ СТРАНИЦ
 
 //ОБОЛОЧКА
@@ -78,10 +79,6 @@ $beigeColor: #E6E6E6;
   flex-direction: column;
 }
 
-.lock {
-  overflow: hidden;
-}
-
 .mainblock {
   display: flex;
   justify-content: center;
@@ -100,11 +97,6 @@ $beigeColor: #E6E6E6;
       align-items: center;
     }
   }
-	&__logo {
-	}
-	&__text {
-
-	}
 	&__title {
     font-family: 'Bebas Neue';
     font-weight: 700;
@@ -140,15 +132,6 @@ $beigeColor: #E6E6E6;
 	}
 }
 
-.ibg{
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	img {
-    display: none;
-  }
-}
-
 .header { 
   position: sticky;
   top: 0;
@@ -162,14 +145,6 @@ $beigeColor: #E6E6E6;
     @include for-tablet {
       flex-direction: row-reverse;
     }
-  }
-
-  &__logo {
-    
-  }
-
-  &__menu {
-
   }
 }
 
@@ -269,9 +244,8 @@ $beigeColor: #E6E6E6;
 }
 
 .story {
-  padding: 57px 0 110px 0 ;
-  &__content {
-  }
+  padding: 57px 0 110px 0;
+  background-color: $whiteColor;
   &__title {
     margin: 0 0 60px 0;
     @include for-tablet {
@@ -283,7 +257,7 @@ $beigeColor: #E6E6E6;
     justify-content: space-between;
     align-items: center;
     @include for-laptop {
-      align-items: flex-start;
+      align-items: center;
     }
     @include for-tablet {
       flex-direction: column;
@@ -291,30 +265,6 @@ $beigeColor: #E6E6E6;
     }
   }
 }
-
-.title {
-  position: relative;
-  padding: 0 0 10px 0;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 21px;
-  text-align: center;
-  letter-spacing: 2.31px;
-  color: $darkColor;
-  &::after {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 50px;
-    height: 2px;
-    bottom: 0;
-    left: 50%;
-    margin-left: -25px;
-    background-color: $blueColor;
-  }
-
-}
-
 
 .body-story {
   max-width: 415px;
@@ -357,11 +307,9 @@ $beigeColor: #E6E6E6;
       }
     }
   }
-
   &__item {
     position: relative;
   }
-
   &__text {
     position: absolute;
     top: 23px;
@@ -372,8 +320,65 @@ $beigeColor: #E6E6E6;
     letter-spacing: 0.1875px;
     color: $whiteColor;
   }
-
   &__img {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.capabilities {
+  background-color: $whiteColor;
+  padding: 0 0 100px 0;
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    @include for-laptop {
+      display: block;
+    }
+  }
+
+  &__title {
+    flex: 1 0 auto;
+    @include for-laptop {
+      margin: 0 0 25px 0;
+    }
+    &.title {
+      &::after {
+        left: 0;
+        margin-left: 0;
+        @include for-laptop {
+          left: 50%;
+          margin-left: -25px;
+        }
+      }
+    }
+  }
+
+  &__body {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    @include for-laptop {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  &__text {
+    padding: 0 31px 0 10px;
+    flex: 0 1 440px;
+    line-height: 19px;
+    font-size: 11px;
+    letter-spacing: 0.2px;
+    color: $darkColor;
+    @include for-laptop {
+      margin: 0 0 35px 0;
+    }
+  }
+
+  &__button {
+    
   }
 }
 
