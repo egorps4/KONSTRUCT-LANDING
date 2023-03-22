@@ -1,0 +1,381 @@
+//МИКСИНЫ
+@mixin for-phone {
+    @media (max-width: 479.98px) { @content; }
+  }
+  @mixin for-tablet {
+    @media (max-width: 767.98px) { @content; }
+  }
+  @mixin for-laptop {
+    @media (max-width: 991.98px) { @content; }
+  }
+  @mixin for-desktop-up  {
+    @media (max-width: 1452px) { @content; }
+  }
+//МИКСИНЫ
+
+
+//ШРИФТЫ
+
+//ПОДКЛЮЧАЕМ ШРИФТЫ
+@import 'fonts';
+//ПОДКЛЮЧАЕМ ШРИФТЫ
+
+//ШРИФТ ПО УМОЛЧАНИЮ
+$fontfamily: 'Open Sans';
+//ШРИФТ ПО УМОЛЧАНИЮ
+
+//ШРИФТЫ
+
+
+//ПЕРЕМЕННЫЕ
+$whiteColor: #fff;
+$blueColor: #16ACE8;
+$darkColor: #48555B;
+$beigeColor: #E6E6E6;
+//ПЕРЕМЕННЫЕ
+
+
+//ОБНУЛЕНИЕ
+@import 'reset';
+//ОБНУЛЕНИЕ
+
+//ПОДКЛЮЧЕНИЕ СТРАНИЦ
+@import 'header';
+@import 'footer';
+//ПОДКЛЮЧЕНИЕ СТРАНИЦ
+
+//ОБОЛОЧКА
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+//ОБОЛОЧКА
+
+
+//ОСНОВНАЯ СЕТКА
+.container {
+    max-width: 970px;
+    padding: 0 15px;
+    margin: 0 auto;
+    @include for-desktop-up {
+      max-width: 1000px;
+    }
+    @include for-laptop {
+      max-width: 790px
+    }
+    @include for-tablet {
+      max-width: none;
+    }
+}
+//ОСНОВНАЯ СЕТКА
+
+//ОСНОВНОЙ БЛОК
+
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.lock {
+  overflow: hidden;
+}
+
+.mainblock {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex: 1 1 auto;
+  padding: 25px 0 71px 0;
+  &__content {
+    position: relative;
+    z-index: 1;
+    flex: 1 1 auto;
+    .container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+	&__logo {
+	}
+	&__text {
+
+	}
+	&__title {
+    font-family: 'Bebas Neue';
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 70px;
+    letter-spacing: 5.71px;
+    color: #fff;
+    @include for-tablet {
+      font-size: 40px;
+      line-height: 50px;
+    }
+	}
+  &__subtitle {
+    font-size: 16px;
+    line-height: 18.75px;
+    color: #fff;
+  }
+	&__scroll {
+    font-size: 11px;
+    letter-spacing: 3.7px;
+    color: #fff;
+    &:hover, :focus {
+      font-size: 16px;
+      transition: all 0.3s ease 0s;
+    }
+	}
+	&__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+	}
+}
+
+.ibg{
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	img {
+    display: none;
+  }
+}
+
+.header { 
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  border-bottom: 2px solid $beigeColor;
+  padding: 25px 0 24px 0;
+  background-color: $whiteColor;
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    @include for-tablet {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__logo {
+    
+  }
+
+  &__menu {
+
+  }
+}
+
+.menu {
+  &__icon {
+    display: none;
+    @include for-tablet {
+      position: relative;
+      display: block;
+      z-index: 5;
+      width: 30px;
+      height: 18px;
+      cursor: pointer;
+      span {
+        position: absolute;
+        width: 100%;
+        height: 10%;
+        transition: all 0.3s ease 0s;
+        background-color: $blueColor;
+        &:nth-child(1) {
+          top: 0%;
+        }
+        &:nth-child(2) {
+          top: 55%;
+          transform: scale(1) translate(0, -50%);
+        }
+        &:nth-child(3) {
+          top: 100%;
+        }
+      }
+      &.active {
+        position: fixed;
+        top: 25px;
+        left: 15px;
+        span {
+          background-color: $whiteColor;
+          &:nth-child(1) {
+            top: 50%;
+            transform: rotate(45deg);
+          }
+          &:nth-child(2) {
+            transform: scale(0) translate(0, -50%);; 
+          }
+          &:nth-child(3) {
+            top: 50%;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+  &__body {
+    @include for-tablet {
+      z-index: 4;
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      padding: 100px 0 0 50px;
+      background-color: $blueColor ;
+      &.active {
+        left: 0;
+      }
+    }
+  }
+  &__list {
+    display: flex;
+    @include for-tablet {
+      flex-direction: column;
+    }
+  }
+  &__item {
+    margin: 0 45px 0 0;
+    &:last-child {
+      margin: 0 0 0 0;
+    }
+    @include for-tablet {
+      margin: 0 0 30px 0;
+    }
+  }
+  &__link {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.09px;
+    color: $darkColor;
+    @media (min-width: 767.98px) {
+      &:hover {
+        color: $blueColor;
+        transition: color 0.2s ease 0s;
+      }
+    }
+    @include for-tablet {
+      color: $whiteColor;
+    }
+  }
+}
+
+.story {
+  padding: 57px 0 110px 0 ;
+  &__content {
+  }
+  &__title {
+    margin: 0 0 60px 0;
+    @include for-tablet {
+      margin: 0 0 15px 0;
+    }
+  }
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include for-laptop {
+      align-items: flex-start;
+    }
+    @include for-tablet {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+.title {
+  position: relative;
+  padding: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21px;
+  text-align: center;
+  letter-spacing: 2.31px;
+  color: $darkColor;
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -25px;
+    background-color: $blueColor;
+  }
+
+}
+
+
+.body-story {
+  max-width: 415px;
+  padding: 0 10px 0 0;
+  &__title {
+    margin: 0 0 30px 0;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.1875px;
+    color: $darkColor;
+    font-weight: 700;
+    span {
+      color: $blueColor;
+    }
+    @include for-tablet {
+      margin: 0 0 15px 0;
+    }
+  }
+  &__text {
+    line-height: 23px;
+    letter-spacing: 0.1875px;
+    color: $darkColor;
+    @include for-tablet {
+      margin: 0 0 15px 0;
+    }
+  }
+}
+
+.image-story {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 -15px;
+  &__column {
+    padding: 0px 15px;
+    @include for-laptop {
+      margin: 0 0 15px 0;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__text {
+    position: absolute;
+    top: 23px;
+    left: 12px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0.1875px;
+    color: $whiteColor;
+  }
+
+  &__img {
+  }
+}
+
+
+//ОСНОВНОЙ БЛОК
