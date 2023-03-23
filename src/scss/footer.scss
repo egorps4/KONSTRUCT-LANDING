@@ -97,8 +97,6 @@
         letter-spacing: 0.85px;
     }
     letter-spacing: 0.85px;
-    &__email {
-    }
 }
 
 .social-footer {
@@ -120,7 +118,7 @@
 
 .footer {
     &__bottom {
-        height: 60px;
+        padding: 22px 0;
         background-color: #171819;
     }
     &__bottom-content {
@@ -129,7 +127,7 @@
     &__bottom-text {
         color: $whiteColor;
         letter-spacing: 0.85px;
-        line-height: 60px;
+        
     }
 }
 

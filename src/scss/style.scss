@@ -357,8 +357,8 @@ $beigeColor: #E6E6E6;
 .services {
   background-color: $whiteColor;
   padding: 0 0 100px 0;
-  &__content {
-    
+  @include for-laptop {
+    padding: 0 0 20px 0;
   }
 }
 
@@ -412,9 +412,7 @@ $beigeColor: #E6E6E6;
       padding: 0 0 0 0;
     }
   }
-  &__button {
-    
-  }
+
 }
 
 .bottom-services {
@@ -500,9 +498,6 @@ $beigeColor: #E6E6E6;
     color: $darkColor;
   }
 
-  &__btn {
-  }
-
   &__image {
     z-index: -1;
     position: absolute;
@@ -555,8 +550,7 @@ $beigeColor: #E6E6E6;
     max-width: 150px;
   }
 }
-.btn {
-}
+
 
 
 
