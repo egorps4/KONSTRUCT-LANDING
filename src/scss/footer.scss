@@ -1,0 +1,135 @@
+.footer {
+    &__top {
+        padding: 42px 0 48px 0;
+        background-color: #141A20;
+        color: $whiteColor;
+        a {
+            color: $whiteColor;
+            &:hover {
+                color: $blueColor;
+            }
+        }
+        &-content {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
+.logo-footer {
+    margin: 0 71px 0 0;
+    @include for-tablet {
+        display: none;
+    }
+    &__title {
+        margin: 0 0 20px 0;
+        letter-spacing: 0.89px;
+    }
+    &__logo {
+        display: block;
+        margin: 0 0 16px 0;
+    }
+    &__text {
+        max-width: 250px;
+        font-size: 11px;
+        line-height: 19px;
+        letter-spacing: 0.85px;
+    }
+}
+
+.links-footer {
+    margin: 0 34px 0 0;
+    @include for-tablet {
+        display: none;
+    }
+    &__title {
+        margin: 0 0 15px 0;
+        font-size: 11px;
+        letter-spacing: 0.85px;
+    }
+    &__item {
+        margin: 0 0 10px 0;
+    }
+    &__link {
+        letter-spacing: 0.85px;
+    }
+}
+
+.faq-footer {
+    margin: 0 38px 0 0;
+    @include for-phone {
+        display: none;
+    }
+    &__item {
+        margin: 0 0 10px 0;
+    }
+    &__link {
+        letter-spacing: 0.85px;
+    }
+}
+
+.blog-footer {
+    margin: 0 58px 0 0;
+    @include for-phone {
+        display: none;
+    }
+    &__item {
+        margin: 0 0 10px 0;
+    }
+    &__link {
+        letter-spacing: 0.85px;
+    }
+}
+
+.contact-footer {
+    margin: 0 46px 0 0;
+    &__title {
+        margin: 0 0 15px 0;
+        letter-spacing: 0.85px;
+    }
+    &__adress {
+        line-height: 16px;
+        margin: 0 0 15px 0;
+        letter-spacing: 0.85px;
+    }
+    &__tel {
+        margin: 0 0 15px 0;
+        letter-spacing: 0.85px;
+    }
+    letter-spacing: 0.85px;
+    &__email {
+    }
+}
+
+.social-footer {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: space-between;
+    @include for-laptop {
+        flex-direction: column;
+    } 
+    @include for-phone {
+        flex-direction: row;
+        align-items: center;
+    }
+    &-icons {
+        margin: 0 0 15px 0;
+    }
+   
+}
+
+.footer {
+    &__bottom {
+        height: 60px;
+        background-color: #171819;
+    }
+    &__bottom-content {
+        text-align: center;
+    }
+    &__bottom-text {
+        color: $whiteColor;
+        letter-spacing: 0.85px;
+        line-height: 60px;
+    }
+}
+

@@ -118,6 +118,15 @@ $beigeColor: #E6E6E6;
     font-size: 11px;
     letter-spacing: 3.7px;
     color: #fff;
+    animation: flicker 1s infinite;
+    @keyframes flicker {
+      from {
+        opacity: 1;;
+      }
+      to {
+        opacity: 0.4
+      }
+    }
     &:hover, :focus {
       font-size: 16px;
       transition: all 0.3s ease 0s;
@@ -208,6 +217,16 @@ $beigeColor: #E6E6E6;
       background-color: $blueColor ;
       &.active {
         left: 0;
+        &::after {
+          content: "";
+          z-index: 4;
+          position: fixed;
+          top: 0;
+          right: 0;
+          width: 50%;
+          height: 100%;
+          background-color: rgb(0, 0, 0, 0.5);
+        }
       }
     }
   }
@@ -244,8 +263,11 @@ $beigeColor: #E6E6E6;
 }
 
 .story {
-  padding: 57px 0 110px 0;
+  padding: 57px 0 78px 0;
   background-color: $whiteColor;
+  @include for-tablet {
+    padding: 25px 0 25px 0;
+  }
   &__title {
     margin: 0 0 60px 0;
     @include for-tablet {
@@ -300,11 +322,16 @@ $beigeColor: #E6E6E6;
   margin: 0 -15px;
   &__column {
     padding: 0px 15px;
+    max-width: 170px;
+    height: auto;
     @include for-laptop {
       margin: 0 0 15px 0;
       &:last-child {
         margin: 0;
       }
+    }
+    @include for-phone {
+      flex: 1 1 50%;
     }
   }
   &__item {
@@ -321,25 +348,33 @@ $beigeColor: #E6E6E6;
     color: $whiteColor;
   }
   &__img {
-    display: inline-block;
+    display: block;
     width: 100%;
     height: auto;
   }
 }
 
-.capabilities {
+.services {
   background-color: $whiteColor;
   padding: 0 0 100px 0;
   &__content {
-    display: flex;
-    justify-content: space-between;
-    @include for-laptop {
-      display: block;
-    }
+    
   }
+}
 
+.top-services { 
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 76px 0;
+  @include for-laptop {
+    display: block;
+  }
+  @include for-tablet {
+    margin: 0 0 35px 0;
+  }
   &__title {
     flex: 1 0 auto;
+    align-self: flex-start;
     @include for-laptop {
       margin: 0 0 25px 0;
     }
@@ -364,7 +399,7 @@ $beigeColor: #E6E6E6;
       text-align: center;
     }
   }
-
+  
   &__text {
     padding: 0 31px 0 10px;
     flex: 0 1 440px;
@@ -374,13 +409,155 @@ $beigeColor: #E6E6E6;
     color: $darkColor;
     @include for-laptop {
       margin: 0 0 35px 0;
+      padding: 0 0 0 0;
     }
   }
-
   &__button {
     
   }
 }
+
+.bottom-services {
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -14px 0 -14px;
+    justify-content: center;
+    @include for-tablet() {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  &__column {
+    flex: 0 1 33.333%;
+    padding: 0 14px 0 14px;
+    margin: 0 0 15px 0;
+    @include for-laptop {
+      flex: 0 0 50%;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+    padding: 38px 22px 39px 23px;
+    border: 2px solid $beigeColor;
+  }
+}
+.item-services {
+  &__image {
+    margin: 0 0 25px 0;
+    img{
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &__title {
+    max-width: 245px;
+    margin: 0 0 13px 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.43px;
+    color: $darkColor;
+    @include for-laptop {
+      min-height: 72px;
+    }
+    @include for-tablet() {
+      margin: 0 0 0 0;
+    }
+  }
+
+  &__text {
+    max-width: 245px;
+    flex: 1 1 auto;
+    line-height: 23px;
+    letter-spacing: 0.19px;
+    color: $darkColor;
+  }
+}
+
+.amazing {
+  position: relative;
+  z-index: 2;
+  padding: 0 0 231px 0;
+  &__content {
+    text-align: center;
+  }
+
+  &__title {
+    margin: 0 0 35px 0;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: 0.15px;
+    color: $darkColor;
+  }
+
+  &__btn {
+  }
+
+  &__image {
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+}
+
+.container__2 {
+  max-width: 705px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.sign {
+  padding: 30px 0;
+  background-color: #171819;
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include for-tablet {
+      flex-direction: column;
+    }
+  }
+  &__text {
+    font-size: 22px;
+    letter-spacing: 0.85px;
+    color: $whiteColor;
+    @include for-tablet {
+      margin: 0 0 15px 0;
+    }
+  }
+}
+
+.form-sign {
+  display: flex;
+  justify-content: center;
+  &__item {
+    padding: 11px 0 10px 16px;
+    flex: 1 0 250px;
+    @include for-tablet{
+      flex: 1 1 auto;
+    }
+  }
+
+  &__btn {
+    max-width: 150px;
+  }
+}
+.btn {
+}
+
 
 
 //ОСНОВНОЙ БЛОК

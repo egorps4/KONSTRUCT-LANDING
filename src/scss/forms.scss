@@ -23,12 +23,21 @@
 
 //Кнопка
 .btn {
+  display: inline-block;
     padding: 11px 29px;
     letter-spacing: 0.5px;
     background-color: $blueColor;
     color: $whiteColor;
     font-weight: 600;
+    outline: #0c465e;
+    cursor: pointer;
+    &:hover, &:focus {
+      background-color: #0c465e;
+      transition: all 0.3s ease 0s;
+    }
 }
+
+
 
 //Превращаем HTML картинку в фон
 .ibg{
