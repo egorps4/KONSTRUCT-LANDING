@@ -218,16 +218,6 @@ $beigeColor: #E6E6E6;
       &.active {
         overflow: auto;
         left: 0;
-        &::before {
-          content: "";
-          position: absolute;
-          z-index: 4;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 72px;
-          background-color: #171819;
-        }
         &::after {
           content: "";
           z-index: 4;
