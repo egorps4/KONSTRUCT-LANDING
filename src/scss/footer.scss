@@ -57,6 +57,9 @@
 
 .faq-footer {
     margin: 0 38px 0 0;
+    @include for-tablet {
+        order: 1;
+    }
     @include for-phone {
         display: none;
     }
