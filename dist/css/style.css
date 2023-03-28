@@ -932,17 +932,6 @@ p {
     left: 0;
   }
 
-  .menu__body.active::before {
-    content: "";
-    position: absolute;
-    z-index: 4;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 72px;
-    background-color: #171819;
-  }
-
   .menu__body.active::after {
     content: "";
     z-index: 4;
